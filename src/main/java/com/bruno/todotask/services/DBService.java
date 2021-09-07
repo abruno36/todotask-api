@@ -26,7 +26,12 @@ public class DBService {
 		TodoTask t5 = new TodoTask(null, "Academia", "Caminhar durante 30 minutos pela manhã", sdf.parse("01/09/2022"), true);
 		TodoTask t6 = new TodoTask(null, "Reunião", "Daily diária pela manhã", sdf.parse("30/08/2022"), true);
 		TodoTask t7 = new TodoTask(null, "Reunião", "Reunião Open Bank", sdf.parse("06/09/2021"), false);
+		TodoTask t8 = new TodoTask(null, "Consulta Dr Victor", "Consulta encaixe - reavaição dos exames", sdf.parse("11/09/2021"), false);
+		TodoTask t9 = new TodoTask(null, "Padaria", "Comprar pão doce e pão normal", sdf.parse("06/09/2022"), false);
+		TodoTask t10 = new TodoTask(null, "Acompanhamento das entradas", "Analise das atividades", sdf.parse("08/07/2021"), false);
+		TodoTask t11 = new TodoTask(null, "Sala de Vídeo", "Avaliar sala para apresentação do Open Bank", sdf.parse("09/09/2021"), false);
+		TodoTask t12 = new TodoTask(null, "reunião Flavio e Marcio", "Avaliar pontos de estudo", sdf.parse("09/09/2021"), false);
 
-		todotaskRepository.saveAll(Arrays.asList(t1, t2, t3, t4, t5, t6, t7));
+		todotaskRepository.saveAll(Arrays.asList(t1, t2, t3, t4, t5, t6, t7, t8, t9, t10, t11));
 	}
 }

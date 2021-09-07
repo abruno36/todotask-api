@@ -3,6 +3,8 @@ package com.bruno.todotask.resources;
 import java.net.URI;
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -52,7 +54,7 @@ public class TodoTaskResource {
 	}
 	
 	@PostMapping
-	public ResponseEntity<TodoTask> create(@RequestBody TodoTask obj) {
+	public ResponseEntity<TodoTask> create(@Valid @RequestBody TodoTask obj) {
 		obj = service.create(obj);
 		URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(obj.getId()).toUri();
 		return ResponseEntity.created(uri).body(obj);
@@ -65,7 +67,7 @@ public class TodoTaskResource {
 	}
      
 	@PutMapping(value = "/{id}")
-	public ResponseEntity<TodoTask> update(@PathVariable Integer id, @RequestBody TodoTask obj) {
+	public ResponseEntity<TodoTask> update(@PathVariable Integer id,@Valid @RequestBody TodoTask obj) {
 		TodoTask newObj = service.update(id, obj);
 		return ResponseEntity.ok().body(newObj);
 	}

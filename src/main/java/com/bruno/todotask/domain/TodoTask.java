@@ -8,6 +8,10 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.NotEmpty;
+
+import org.hibernate.validator.constraints.Length;
+
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 
@@ -19,7 +23,13 @@ public class TodoTask implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
+	
+	@NotEmpty(message = "Campo TITULO é requerido!")
+	@Length(min = 5, max = 50, message = "Campo TITULO deve ter entre 5 e 50 caracteres!")
 	private String titulo;
+	
+	@NotEmpty(message = "Campo DESCRIÇÃO é requerido!")
+	@Length(min = 5, max = 200, message = "Campo DESCRIÇÃO deve ter entre 5 e 200 caracteres!")
 	private String descricao;
 
 	@JsonFormat(pattern = "dd/MM/yyyy")
