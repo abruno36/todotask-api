@@ -32,6 +32,6 @@ public class DBService {
 		TodoTask t11 = new TodoTask(null, "Sala de Vídeo", "Avaliar sala para apresentação do Open Bank", sdf.parse("09/09/2021"), false);
 		TodoTask t12 = new TodoTask(null, "reunião Flavio e Marcio", "Avaliar pontos de estudo", sdf.parse("09/09/2021"), false);
 
-		todotaskRepository.saveAll(Arrays.asList(t1, t2, t3, t4, t5, t6, t7, t8, t9, t10, t11));
+		todotaskRepository.saveAll(Arrays.asList(t1, t2, t3, t4, t5, t6, t7, t8, t9, t10, t11, t12));
 	}
 }
